@@ -7,7 +7,7 @@ public class BallRotation : MonoBehaviour
 {
     [SerializeField] Transform tr;
     [SerializeField] Text textSpeed;
-    public float speed = 200;
+    public float speed = 160;
     public bool direct;
 
     private void Start()
