@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class BallRotation : MonoBehaviour
 {
     [SerializeField] Transform tr;
-    [SerializeField] Text textSpeed;
     public float speed = 160;
     public bool direct;
 
@@ -14,7 +13,6 @@ public class BallRotation : MonoBehaviour
     {
         tr = GetComponent<Transform>();
         direct = false;
-        textSpeed.text = "Left";
     }
 
     void FixedUpdate()
@@ -22,12 +20,10 @@ public class BallRotation : MonoBehaviour
         if (direct)
         {
             tr.Rotate(0, 0, speed * Time.deltaTime);
-            textSpeed.text = "Left";
         }
         else
         {
             tr.Rotate(0, 0, -speed * Time.deltaTime);
-            textSpeed.text = "Right";
         }
     }
 

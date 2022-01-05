@@ -7,29 +7,35 @@ using UnityEngine.SceneManagement;
 public class BallScripts : MonoBehaviour
 {
     public int score;
+    public bool isMulti;
     [SerializeField] Text scoreText;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Bonus")
         {
-            score++;
             Destroy(other.gameObject);
+            if (isMulti)
+            {
+                score += 2;
+            }
+            else score++;
         }
         if (other.gameObject.tag == "Enemy")
         {
-            /*if (score > 0)
-            {
-                score--;
-            }*/
-
             PlayerPrefs.SetInt("Score", score);
-            SceneManager.LoadScene(2);
-
+            isMulti = false;
+            PlayerPrefs.SetInt("isMulti", 0);
             Destroy(other.gameObject);
+
+            SceneManager.LoadScene(2);
         }
     }
 
+    private void Start()
+    {
+        isMulti = PlayerPrefs.GetInt("isMulti") == 1 ? true : false;
+    }
     void Update()
     {
         scoreText.text = score.ToString();

@@ -23,4 +23,9 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void GoToShop()
+    {
+        SceneManager.LoadScene(3);
+    }
 }

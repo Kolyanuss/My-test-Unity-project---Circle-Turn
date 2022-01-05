@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +12,7 @@ public class GameOverScript : MonoBehaviour
     private void Start()
     {
         score = PlayerPrefs.GetInt("Score");
-        scoreText.text += " " + score.ToString();
+        scoreText.text += " " + score.ToString() + "₴";
     }
 
     public void GoToMenu()
