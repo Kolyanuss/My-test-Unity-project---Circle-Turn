@@ -18,14 +18,14 @@ public class BallScripts : MonoBehaviour
         }
         if (other.gameObject.tag == "Enemy")
         {
-            if (score > 0)
+            /*if (score > 0)
             {
                 score--;
-            }
-            else
-            {
-                SceneManager.LoadScene(2);
-            }
+            }*/
+
+            PlayerPrefs.SetInt("Score", score);
+            SceneManager.LoadScene(2);
+
             Destroy(other.gameObject);
         }
     }
