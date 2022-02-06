@@ -9,12 +9,14 @@ public class BallScripts : MonoBehaviour
     public int score;
     public bool isMulti;
     [SerializeField] Text scoreText;
+    [SerializeField] GameObject effectBonus;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Bonus")
         {
             Destroy(other.gameObject);
+            Instantiate(effectBonus, transform.position, Quaternion.identity);
             if (isMulti)
             {
                 score += 2;

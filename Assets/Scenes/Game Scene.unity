@@ -813,7 +813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tr: {fileID: 0}
-  textSpeed: {fileID: 415074176}
   speed: 200
   direct: 0
 --- !u!1 &1830402654
@@ -914,7 +913,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  isMulti: 0
   scoreText: {fileID: 415074176}
+  effectBonus: {fileID: 179459920988977820, guid: 94da9bdcccc5e7b4bb16fc5a8ec5cb9d, type: 3}
 --- !u!50 &1830402658
 Rigidbody2D:
   serializedVersion: 4
